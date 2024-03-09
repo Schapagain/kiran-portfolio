@@ -19,7 +19,7 @@ h3 {
 }
 
 h1 {
-  font-size: 6rem;
+  font-size: 4rem;
 }
 
 .main-container {
@@ -38,7 +38,8 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10rem 2rem;
+  justify-content: center;
+  padding: 5rem 2rem;
 }
 
 .info {
@@ -47,8 +48,13 @@ h1 {
 
 .notice {
   font-size: 1.5rem;
+}
 
-  @media screen and (min-width: 787px) {
+@media screen and (min-width: 787px) {
+  .notice {
     font-size: 2.5rem;
+  }
+  .h1 {
+    font-size: 6rem;
   }
 }
