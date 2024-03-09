@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow: hidden;
+  color: #ffffff;
+  font-family: "Ojuju", sans-serif;
+  font-weight: 200;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 500;
+}
+
+h1 {
+  font-size: 6rem;
+}
+
+.main-container {
+  background-image: url("/images/bluesplash.jpeg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  box-shadow: inset 1000px;
+  -webkit-box-shadow: inset 0px 0px 40px 5000px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: inset 0px 0px 40px 5000px rgba(0, 0, 0, 0.4);
+  box-shadow: inset 0px 0px 40px 5000px rgba(0, 0, 0, 0.4);
+  min-height: 100vh;
+  width: 100vw;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10rem;
+}
+
+.info {
+  text-align: center;
+}
+
+.notice {
+  font-size: 3rem;
+}
