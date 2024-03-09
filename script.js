@@ -7,16 +7,6 @@ const canvas = document.querySelector("canvas.webgl");
 
 const scene = new $.Scene();
 
-// Environment map
-const rbgeLoader = new RGBELoader();
-rbgeLoader.load(
-  "./textures/environmentMap/the_sky_is_on_fire_1k.hdr",
-  (map) => {
-    map.mapping = $.EquirectangularReflectionMapping;
-    scene.environment = map;
-  }
-);
-
 const gltfLoader = new GLTFLoader();
 let abstractShape;
 
@@ -45,10 +35,38 @@ const camera = new $.PerspectiveCamera(
 camera.position.set(0, 0, 7);
 scene.add(camera);
 
-// const controls = new OrbitControls(camera, canvas);
-// controls.target.set(0, 1, 0);
-// controls.enableDamping = true;
-// controls.maxZoom = 2;
+const controls = new OrbitControls(camera, canvas);
+controls.target.set(0, 0, 0);
+controls.enableDamping = true;
+controls.enableZoom = false;
+
+const ambientLight = new $.AmbientLight(0xffffff, 2.4);
+scene.add(ambientLight);
+
+const envColorLight = new $.DirectionalLight(0xffc9c9, 2);
+envColorLight.position.set(2, 0, 8);
+
+const directionalLight = new $.DirectionalLight(0xffffff, 3);
+directionalLight.castShadow = true;
+directionalLight.position.set(2, 0, 8);
+
+const directionalLight2 = new $.DirectionalLight(0xffffff, 3);
+directionalLight2.castShadow = true;
+directionalLight2.position.set(-2, 0, -8);
+
+scene.add(directionalLight, directionalLight2, envColorLight);
+
+// Environment map
+const rbgeLoader = new RGBELoader();
+rbgeLoader.load(
+  "./textures/environmentMap/the_sky_is_on_fire_1k.hdr",
+  (map) => {
+    map.mapping = $.EquirectangularReflectionMapping;
+    scene.environment = map;
+    directionalLight.intensity = 0.5;
+    directionalLight2.intensity = 0.5;
+  }
+);
 
 /**
  * Renderer
@@ -56,8 +74,9 @@ scene.add(camera);
 const renderer = new $.WebGLRenderer({
   canvas: canvas,
   alpha: true,
+  antialias: true,
 });
-renderer.shadowMap.enabled = true;
+renderer.shadowMap.enabled = false;
 renderer.shadowMap.type = $.PCFSoftShadowMap;
 renderer.setSize(sizes.width, sizes.height);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
@@ -74,7 +93,7 @@ const tick = () => {
   previousTime = elapsedTime;
 
   // Update controls
-  //   controls.update();
+  controls.update();
 
   //   Rotate shape
   if (abstractShape) {
