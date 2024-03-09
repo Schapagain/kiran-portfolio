@@ -6,7 +6,7 @@
 
 html,
 body {
-  overflow: hidden;
+  overflow-x: hidden;
   color: #ffffff;
   font-family: "Ojuju", sans-serif;
   font-weight: 200;
@@ -23,6 +23,7 @@ h1 {
 }
 
 .main-container {
+  background-color: #84d7df;
   background-image: url("/images/bluesplash.jpeg");
   background-repeat: no-repeat;
   background-position: center;
@@ -37,7 +38,7 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 10rem;
+  padding: 10rem 2rem;
 }
 
 .info {
@@ -45,5 +46,9 @@ h1 {
 }
 
 .notice {
-  font-size: 3rem;
+  font-size: 1.5rem;
+
+  @media screen and (min-width: 787px) {
+    font-size: 2.5rem;
+  }
 }
