@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Gafata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -8,8 +10,8 @@ html,
 body {
   overflow-x: hidden;
   color: #ffffff;
-  font-family: "Ojuju", sans-serif;
-  font-weight: 200;
+  font-family: 'Gafata', sans-serif;
+  font-weight: 400;
 }
 
 h1,
@@ -19,42 +21,99 @@ h3 {
 }
 
 h1 {
-  font-size: 4rem;
+  font-size: 2rem;
+}
+h2 {
+  font-size: 1.2rem;
+  
 }
 
+
 .main-container {
-  background-color: #84d7df;
-  background-image: url("/images/bluesplash.jpeg");
+  // background-color: #84d7df;
+  background-image: url("/images/brick_wall.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  box-shadow: inset 1000px;
-  -webkit-box-shadow: inset 0px 0px 40px 5000px rgba(0, 0, 0, 0.4);
-  -moz-box-shadow: inset 0px 0px 40px 5000px rgba(0, 0, 0, 0.4);
-  box-shadow: inset 0px 0px 40px 5000px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: inset 0px 0px 40px 5000px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: inset 0px 0px 40px 5000px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0px 0px 40px 5000px rgba(0, 0, 0, 0.2);
   min-height: 100vh;
   width: 100vw;
-
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 5rem 2rem;
+  padding: 5rem 1rem;
+}
+
+.info-wrapper {
+  background-image: url("/images/wood.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  -webkit-box-shadow: inset 0px 0px 40px 5000px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: inset 0px 0px 40px 5000px rgba(0, 0, 0, 0.4);
+  box-shadow: inset 0px 0px 40px 5000px rgba(226, 156, 36, 0.8);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  height: 70vh;
+  width: 100%;
+  max-width: 80rem;
 }
 
 .info {
   text-align: center;
+   background-image: url("/images/greenboard.jpg");
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: cover;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+  height: 100%;
+  width: 100%;
+  position: relative;
 }
 
 .notice {
-  font-size: 1.5rem;
+  font-size: 1rem;
+  position: absolute;
+  bottom:1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
 }
 
-@media screen and (min-width: 787px) {
-  .notice {
-    font-size: 2.5rem;
+@media screen and (min-width: 767px) {
+
+  body {
+    font-family: "Fredericka the Great", sans-serif;
   }
-  .h1 {
-    font-size: 6rem;
+
+  .main-container {
+    padding: 5rem 2rem;
+  }
+
+  .info-wrapper {
+    width: 95%;
+    height: 60vh;
+  }
+}
+
+
+@media screen and (min-width: 993px) {
+
+  .info-wrapper {
+    width: 80%;
+    height: 70vh;
+  }
+  .notice {
+    font-size: 1.5rem;
+  }
+  h1 {
+    font-size: 4rem;
   }
 }
