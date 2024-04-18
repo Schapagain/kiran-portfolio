@@ -7,6 +7,7 @@ $color-secondary: #7c7fb7;
 $color-tertiary: #a65e61;
 $color-bg: azure;
 
+$screen-tablet: 767px;
 $screen-small: 993px;
 
 $font-size-copy: 18px;
@@ -132,9 +133,14 @@ img {
       opacity: 0;
       font-size: 1.2rem;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       gap: 0.5rem;
+
+      @media only screen and (min-width: $screen-tablet) {
+        flex-direction: row;
+      }
 
       .icon-wrapper {
         display: block;
