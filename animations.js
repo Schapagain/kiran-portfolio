@@ -24,13 +24,3 @@ bioGraphicTimeline
   .to("#Mug", { opacity: 1, duration: 0.5 })
   .to("#Person", { opacity: 1, duration: 0.5 })
   .to("#Halo", { opacity: 1, duration: 0.5 });
-
-gsap.from(".projects", {
-  scrollTrigger: {
-    trigger: ".bio",
-    start: "17% top",
-    scrub: true,
-    pin: true,
-  },
-  xPercent: 100,
-});
