@@ -47,20 +47,21 @@ gsap.to(".main-container", {
   backgroundColor: "#61a65e",
 });
 
-const greenToPurple = gsap.fromTo(
-  ".main-container",
-  {
-    backgroundColor: "#61a65e",
-  },
-  { immediateRender: false, backgroundColor: "#7c7fb7" }
-);
+// const greenToPurple = gsap.fromTo(
+//   ".main-container",
+//   {
+//     immediateRender: false,
+//     backgroundColor: "#61a65e",
+//   },
+//   { immediateRender: false, backgroundColor: "#7c7fb7" }
+// );
 
-ScrollTrigger.create({
-  animation: greenToPurple,
-  trigger: ".projects",
-  end: "center center",
-  scrub: true,
-});
+// ScrollTrigger.create({
+//   animation: greenToPurple,
+//   trigger: ".projects",
+//   end: "center center",
+//   scrub: true,
+// });
 
 // create
 let mm = gsap.matchMedia();
