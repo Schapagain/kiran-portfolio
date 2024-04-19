@@ -36,6 +36,7 @@ ScrollTrigger.create({
   scrub: true,
   // markers: true,
   pin: ".graphic-wrapper",
+  pinType: "fixed",
 });
 
 gsap.to(".main-container", {
