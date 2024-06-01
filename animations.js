@@ -31,10 +31,10 @@ bioGraphicTimeline
 ScrollTrigger.create({
   animation: bioGraphicTimeline,
   trigger: ".start-screen",
-  start: "10% top",
-  end: "120% top",
+  start: "0% top",
+  end: "100% top",
   scrub: true,
-  // markers: true,
+  markers: true,
   pin: ".graphic-wrapper",
   pinType: "fixed",
 });
@@ -44,7 +44,6 @@ let mm = gsap.matchMedia();
 
 // add a media query. When it matches, the associated function will run
 mm.add("(max-width: 992px)", () => {
-  console.log("MATCHED");
   bioGraphicTimeline.to(".graphic-wrapper", { opacity: 0 }, "halo");
   return () => {
     // optional
@@ -54,7 +53,6 @@ mm.add("(max-width: 992px)", () => {
 
 // add a media query. When it matches, the associated function will run
 mm.add("(min-width: 993px)", () => {
-  console.log("MATCHED");
   bioGraphicTimeline.to(
     ".graphic-wrapper",
     {
