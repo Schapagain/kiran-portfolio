@@ -34,7 +34,7 @@ ScrollTrigger.create({
   start: "0% top",
   end: "100% top",
   scrub: true,
-  markers: true,
+  // markers: true,
   pin: ".graphic-wrapper",
   pinType: "fixed",
 });
