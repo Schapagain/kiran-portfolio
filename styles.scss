@@ -127,6 +127,8 @@ img {
 
   .title-text {
     text-align: center;
+    position: relative;
+    z-index: 999;
     .name {
       position: relative;
       top: 4rem;
