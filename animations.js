@@ -39,31 +39,6 @@ ScrollTrigger.create({
   pinType: "fixed",
 });
 
-gsap.to(".main-container", {
-  scrollTrigger: {
-    trigger: ".bio",
-    end: "center center",
-    scrub: true,
-  },
-  backgroundColor: "#61a65e",
-});
-
-// const greenToPurple = gsap.fromTo(
-//   ".main-container",
-//   {
-//     immediateRender: false,
-//     backgroundColor: "#61a65e",
-//   },
-//   { immediateRender: false, backgroundColor: "#7c7fb7" }
-// );
-
-// ScrollTrigger.create({
-//   animation: greenToPurple,
-//   trigger: ".projects",
-//   end: "center center",
-//   scrub: true,
-// });
-
 // create
 let mm = gsap.matchMedia();
 
